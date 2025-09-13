@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>web devel 2</title>
+    <link rel='stylesheet' href='{{url_for("static", filename="styles.css")}}' />
+  </head>
+
+  <body>
+    <header>
+      <a id='shop' href="{{ url_for('home') }}"><img src="/static/home.JPEG"></a>
+      <h1 id="styleswap">StyleSwap</h1>
+      <nav>
+        <a id='favorites' href="{{ url_for('likes') }}"><img src="/static/favourites.JPEG"></a>
+        <a id='cart' href="{{ url_for('cart') }}"><img src="/static/cart.JPEG"></a>
+      
+      {% if g.user %}
+        <a id='signup' href="{{ url_for('sell') }}">Sell</a>
+        <a id='login' href="{{ url_for('logout') }}">Log out</a>
+      {% else %}
+        <a id='signup' href="{{ url_for('register') }}">Sign up</a>
+        <a id='login' href="{{ url_for('login') }}">Login</a>
+      {% endif %}
+
+    </header>
+       {% block main_content %} 
+       {% endblock %}
+  </body>
+  <footer>
+    <p>
+        © Copyright, Amc, 2024. All rights reserved.<br>
+        All images from pexels.
+    </p>
+  </footer>
+
+</html>
+
+
+<!-- User: {{ g.user }} -->

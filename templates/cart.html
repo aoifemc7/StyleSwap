@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <h2>Your cart</h2>
+    {% if cart %}
+        <table id="Carttable">
+            {% for item_id in cart %}
+                <tr id="tr">
+                    <td><img src="{{ url_for('static', filename=images[item_id])}}" id="image"></td>
+                    <td>{{ names[item_id] }}</td>
+                    <td>Quantity:{{ cart[item_id] }}</td>
+                    <td><a href="{{ url_for('purchase', item_id=item_id) }}">
+                            Buy
+                    </a></td>
+                </tr>
+            {% endfor %}
+    </table>
+    {% else %}
+        <p>Your cart is empty!</p>
+    {% endif %}
+
+{% endblock %}

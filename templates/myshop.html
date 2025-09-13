@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <h2>For sale in your shop</h2>
+    <table id="table">
+        {% for sell in selling %}
+            <tr>
+                <td><img src="{{ url_for('static', filename=sell['image'])}}" id="image"></td>
+                <td id="name">
+                    <a href="{{ url_for('item', item_id=sell['item_id']) }}">
+                        {{ sell["name"] }}</a>
+                </td>
+                <td id="price">€{{ sell["price"] }}</td>
+                <td><a href="{{ url_for('purchased', item_id=sell['item_id']) }}">
+                    if item purchased -> time to ship. click to remove
+                </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <h2>List a product:</h2>
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label }}
+        {{ form.name() }}
+        {% for error in form.name.errors %}
+            {{error}}
+        {% endfor %}
+        <br />
+        {{ form.type.label }}
+        {{ form.type() }}
+        {% for error in form.type.errors %}
+            {{error}}
+        {% endfor %}
+        <br />
+        {{ form.price.label }}
+        {{ form.price() }}
+        {% for error in form.price.errors %}
+            {{error}}
+        {% endfor %}
+        <br />
+        {{ form.description.label }}
+        {{ form.description() }}
+        {% for error in form.description.errors %}
+            {{error}}
+        {% endfor %}
+        <br />
+
+        {{ form.submit() }}
+    </form>
+
+
+
+{% endblock %}

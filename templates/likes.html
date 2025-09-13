@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <h2>Your Favourites</h2>
+    {% if likes %}
+        <table id="Carttable">
+            {% for item_id in likes %}
+                <tr id="tr">
+                    <td><img src="{{ url_for('static', filename=images[item_id])}}" id="image"></td>
+                    <td>{{ names[item_id] }}</td>
+                    <td><a href="{{ url_for('add_to_cart', item_id=item_id) }}">
+                        Add to cart
+                    </a></td>
+                    <td><a href="{{ url_for('remove_from_likes', item_id=item_id) }}">
+                        Remove from favourites
+                    </a></td>
+
+                </tr>
+            {% endfor %}
+    </table>
+    {% else %}
+        <p>Your favourites is empty!</p>
+    {% endif %}
+
+{% endblock %}

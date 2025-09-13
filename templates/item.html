@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+    <p><img src="{{ url_for('static', filename=item['image'])}}" id="imageItem"></p>
+    <h2>{{ item["name"] }}</h2>
+    <p>
+        Price: {{ item["price"] }}
+    </p>
+    <p>
+        {{ item["description"] }}
+    </p>
+    <p>
+        <a href="{{ url_for('add_to_cart', item_id=item['item_id']) }}">
+            Add to cart
+        </a>
+    </p>
+    <p>
+        {% if g.user %}
+            <a href="{{ url_for('add_to_likes', item_id=item['item_id']) }}">
+                Add to favourites
+            </a>
+        {% else %}
+            <a id='signup' href="{{ url_for('register') }}">Sign up</a>
+            <a id='login' href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+
+    </p>
+
+{% endblock %}
