@@ -1,0 +1,175 @@
+html {
+    background-color: #fff3f5;
+    font-family: monospace;
+    margin: 0px;
+    height: 100%;
+}
+
+
+body {
+    margin-top: 1%;
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    border: 1px solid #770c35;
+    background-color: white;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 6fr 4fr;
+    grid-template-areas: "left middle1 middle2 right";
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "one two three four";
+}
+
+nav > #favorites,  nav > #cart, nav > #signup, nav > #user, nav > #login{
+    border-radius: 1em;
+    padding: 1rem;
+    margin: 4%;
+}
+/*
+nav {
+    border: 1px solid green;
+}*/
+
+#filters {
+    grid-area: "left";
+}
+
+#shop {
+    grid-area: "middle1";
+    border-radius: 1em;
+    padding: 1rem;
+    margin: 4%;
+}
+#shop:hover {
+    background-color: #fff3f5;
+}
+
+#styleswap {
+    grid-area: "middle2";
+    color: #fb6f92;
+}
+#favorites:hover, #cart:hover {
+    background-color: #fff3f5;
+}
+#signup:hover, #login:hover {
+    background-color: grey;
+}
+#favorites {
+    grid-area: "one";
+}
+#cart {
+    grid-area: "two";
+}
+
+#signup {
+    grid-area: "three";
+}
+#user {
+    grid-area: "three";
+    text-decoration: none;
+    color: black;
+    background-color: #fff3f5;
+    font-size: 17px;
+    font-family: monospace;
+}
+
+#login {
+    grid-area: "four";
+}
+
+#signup, #login {
+    grid-area: "three";
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 17px;
+    font-family: monospace;
+}
+
+tr {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "one"
+                        "two";
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 4%;
+    background-color: white;
+}
+
+#name {
+    grid-area: 'one';
+    text-decoration: none;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+#price {
+    grid-area: 'two';
+    font-family: monospace;
+}
+
+#table {
+    margin-left: 5%;
+    width: 90%;
+    margin-right: 5%;
+}
+
+tbody {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "one two three";
+}
+
+#image {
+    position: block;
+    width: 90%;
+    height: 90%;
+}
+
+#imageItem {
+    max-width: 40%;
+    margin-left: 30%;
+    margin-right: 50%;
+}
+
+footer {
+    background-color: white;
+    padding: 1rem;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 1%;
+    text-align: center;
+    border: 1px solid #770c35;
+}
+
+h2 { margin-left: 40%;}
+
+#tr {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "one two three four";
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+
+#Carttable > tbody {
+    display: block;
+}
+
+form {
+    margin: 50px;
+    text-align: center;
+}
